@@ -15,7 +15,8 @@ class ScaleActivity : AppCompatActivity() {
     fun startAnimation(view: View) {
         
 //        startScaleAnimation()
-        startTranslateAnimation()
+//        startTranslateAnimation()
+        startAnimationDynamically()
         
     }
 
@@ -34,6 +35,15 @@ class ScaleActivity : AppCompatActivity() {
             R.anim.translate_animation)
         val imageView = findViewById<ImageView>(R.id.imageView)
         imageView.startAnimation(translateAnimation)
+
+    }
+
+    private fun startAnimationDynamically() {
+
+        val imageView = findViewById<ImageView>(R.id.imageView)
+        imageView.animate().translationYBy(500f).rotation(3600f)
+            .alpha(0f)
+            .duration = 2000
 
     }
 }
